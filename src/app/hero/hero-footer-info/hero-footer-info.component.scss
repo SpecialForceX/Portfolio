@@ -1,0 +1,50 @@
+.hero_footer_info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 62px;
+    background: rgba(255, 255, 255, 0.12);
+    transform: skewY(-3deg); /* Neigt die gesamte Box */
+    transform-origin: left bottom;
+    overflow: hidden; /* Verhindert, dass der Text die Box verlässt */
+}
+
+.blur-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 172%; /* Der Blur deckt die gesamte Höhe ab */
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(3.3px);
+    -webkit-backdrop-filter: blur(3.3px);
+    z-index: -1; /* Hinter dem Inhalt positionieren */
+}
+
+
+.hero_footer_info_text {
+    height: 100%;
+    display: flex; /* Flexbox für horizontalen Aufbau */
+    align-items: center;
+    gap: 50px; /* Abstand zwischen den Elementen */
+    white-space: nowrap; /* Kein Zeilenumbruch */
+    font-size: 32px;
+    font-family: 'Karla';
+    color: #3DCFB6;
+    font-weight: 400;
+    animation: scroll-loop 20s linear infinite; /* Dynamische Animationsdauer */
+}
+
+@keyframes scroll-loop {
+    0% {
+        transform: translateX(0); /* Startposition */
+    }
+    100% {
+        transform: translateX(-1550px); /* Bewegung durch den gesamten Block */
+    }
+}
+
+
+
+
+

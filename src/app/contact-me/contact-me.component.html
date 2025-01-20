@@ -1,0 +1,98 @@
+<div id="contact" class="contact_me_main_content">
+    <div class="content_left">
+      <p class="first_title">{{ firstTitle }}</p>
+      <p class="second_title">{{ secondTitle }}</p>
+      <p class="third_title">{{ thirdTitle }}</p>
+      <p class="text_left">{{ text1 }} <span>{{ text2 }}</span></p>
+    </div>
+    <div class="content_right">
+    
+      <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+        <div class="seperator"></div>
+        <!-- Name Input -->
+        <div class="input_container">
+          <label class="title_right">{{ placeholders.nameLabel }}</label>
+          <input
+            [(ngModel)]="contactData.name"
+            type="text"
+            id="name"
+            name="name"
+            [placeholder]="name.invalid && contactForm.submitted ? placeholders.nameError : placeholders.namePlaceholder"
+            class="text_right"
+            [ngClass]="{ 'error_placeholder': name.invalid && contactForm.submitted }"
+            required
+            #name="ngModel"
+          />
+        </div>
+        <div class="seperator"></div>
+        <!-- Email Input -->
+        <div class="input_container">
+          <label class="title_right">{{ placeholders.emailLabel }}</label>
+          <input
+            [(ngModel)]="contactData.email"
+            type="email"
+            id="email"
+            name="email"
+            [placeholder]="email.invalid && contactForm.submitted ? placeholders.emailError : placeholders.emailPlaceholder"
+            class="text_right"
+            [ngClass]="{ 'error_placeholder': email.invalid && contactForm.submitted }"
+            required
+            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+            #email="ngModel"
+          />
+        </div>
+        <div class="seperator"></div>
+        <!-- Message Input -->
+        <div class="input_container">
+          <label class="title_right">{{ placeholders.messageLabel }}</label>
+          <textarea
+            [(ngModel)]="contactData.message"
+            [placeholder]="message.invalid && contactForm.submitted ? placeholders.messageError : placeholders.messagePlaceholder"
+            class="text_right"
+            [ngClass]="{ 'error_placeholder': message.invalid && contactForm.submitted }"
+            required
+            id="message"
+            name="message"
+            #message="ngModel"
+          ></textarea>
+        </div>
+        <div class="seperator"></div>
+        <!-- Consent Checkbox -->
+        <div class="checkbox_container">
+          <input
+            id="consent"
+            type="checkbox"
+            name="consent"
+            required
+            [(ngModel)]="consentChecked"
+            #consent="ngModel"
+          />
+          <label for="consent" class="checkbox_label">
+            {{ placeholders.consentLabelText }}
+            <a
+              [routerLink]="legalNoticeLink"
+              rel="noopener noreferrer"
+              >{{ placeholders.consentLinkText }}</a
+            >
+            {{ placeholders.consentLabelTextAfter }}
+          </label>
+        </div>
+        <div *ngIf="!consentChecked && contactForm.submitted" class="error_checkbox">
+          {{ placeholders.consentError }}
+        </div>
+        
+        <!-- Submit Button -->
+        <div class="button_container">
+          <button type="submit" class="animated-btn">
+            <span>{{ placeholders.buttonText }}</span>
+          </button>
+        </div>
+      </form>
+        <!-- Success Message -->
+    <div *ngIf="submissionSuccess" class="success_message">
+      {{ placeholders.successMessage }}
+    </div>
+    </div>
+  </div>
+  
+  

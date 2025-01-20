@@ -1,0 +1,27 @@
+<div class="hero_footer_info">
+    <div class="blur-area"></div>
+    <div class="hero_footer_info_text">
+      <!-- Dynamische Inhalte basierend auf der Sprache -->
+      <ng-container *ngFor="let text of texts[currentLanguage]">
+        <span>{{ text }}</span>
+        <span>&bull;</span>
+      </ng-container>
+  
+      <!-- Verdoppelte Texte für nahtlosen Übergang -->
+      <ng-container *ngFor="let text of texts[currentLanguage]">
+        <span>{{ text }}</span>
+        <span>&bull;</span>
+      </ng-container>
+  
+      <ng-container *ngFor="let text of texts[currentLanguage]">
+        <span>{{ text }}</span>
+        <span>&bull;</span>
+      </ng-container>
+    </div>
+  </div>
+  
+  
+
+
+
+

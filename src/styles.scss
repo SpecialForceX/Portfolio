@@ -1,0 +1,142 @@
+html,
+body {
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    src: url('/assets/fonts/FiraCode-VariableFont_wght.ttf'),
+}
+
+@font-face {
+    font-family: 'Karla';
+    src: url('/assets/fonts/Karla-VariableFont_wght.ttf'),
+}
+
+body {
+    margin: 0;
+}
+
+.animated-btn {
+    border-radius: 100px;
+    border: solid 1px #FFFFFF;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Karla', sans-serif;
+    background: transparent;
+    color: #FFFFFF;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    transition: border-color 0.3s ease, color 0.3s ease;
+
+    @media (max-width: 400px) {
+        font-size: 16px;
+    }
+
+    @media (max-width: 370px) {
+        font-size: 14px;
+    }
+
+    span {
+        display: inline-block;
+        position: relative;
+        animation: none;
+        /* Standardmäßig keine Animation */
+        transform: translateX(0);
+        /* Startet in der Mitte */
+        white-space: nowrap;
+        transition: transform 0.3s ease-out, color 0.3s ease;
+    }
+
+    &:hover span {
+        animation: slide-seamless 2.5s linear infinite;
+        /* Nahtlose zyklische Animation */
+    }
+
+    &:hover {
+        border-color: #3DCFB6;
+        /* Optional: Ändert die Border-Farbe */
+    }
+
+    &:hover span {
+        color: #3DCFB6;
+        /* Passt die Textfarbe an die Border-Farbe an */
+    }
+
+    &:not(:hover) span {
+        animation: slide-back 0.5s ease-out forwards;
+        /* Animation beim Verlassen des Hover-Zustands */
+    }
+}
+
+/* Keyframes für das nahtlose Gleiten */
+@keyframes slide-seamless {
+    0% {
+        transform: translateX(0);
+        /* Startet in der Mitte */
+    }
+
+    49% {
+        transform: translateX(-200%);
+        /* Verschwindet vollständig links */
+    }
+
+    50% {
+        transform: translateX(200%);
+        /* Springt nahtlos nach rechts */
+    }
+
+    100% {
+        transform: translateX(0);
+        /* Gleitend zurück zur Mitte */
+    }
+}
+
+/* Keyframes für die Rückkehr in die Mitte */
+@keyframes slide-back {
+    0% {
+        transform: translateX(-200%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.no-scroll {
+    overflow: hidden;
+    height: 100%;
+}
+
+/* Scrollbalken für Webkit-Browser (Chrome, Edge) */
+::-webkit-scrollbar {
+    width: 10px;
+    /* Breite des Scrollbalkens */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3DCFB6;
+    /* Farbe des Scroll-Thumbs */
+    border-radius: 5px;
+    /* Runde Kanten */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2AA99F;
+    /* Farbe beim Hover */
+}
+
+::-webkit-scrollbar-track {
+    background: #1C1C1C;
+    /* Hintergrund des Scroll-Tracks */
+}

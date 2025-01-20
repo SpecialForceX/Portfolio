@@ -1,0 +1,24 @@
+<div id="skills" class="skills_main_content">
+  <div class="info_box">
+    <app-info-box [title]="content.title" [firstTitle]="content.firstTitle" [content]="content.content">
+      <div class="skill_subcontent">
+        <h3>
+          <span class="white-text">{{ content.subContentTitle1 }}</span>
+          <span class="green-text">{{ content.subContentTitle2 }}</span>
+        </h3>
+        <p>{{ content.subContentText }}</p>
+        <a href="/home#contact">
+          <button class="animated-btn">
+            <span>{{ content.buttonText }}</span>
+          </button>
+        </a>
+      </div>
+    </app-info-box>
+  </div>
+  <div class="skill_logo_box">
+    <div class="skill_logo" *ngFor="let skill of content.skills">
+      <img [src]="skill.logo" [alt]="skill.name">
+      <p>{{ skill.name }}</p>
+    </div>
+  </div>
+</div>

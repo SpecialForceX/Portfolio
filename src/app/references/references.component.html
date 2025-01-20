@@ -1,0 +1,37 @@
+<div class="references_main_content">
+  <!-- Titel -->
+  <div class="first_title">
+    <p>{{ currentLanguage === 'EN' ? 'What my colleagues say about me' : 'Was meine Kollegen über mich sagen' }}</p>
+  </div>
+
+  <!-- Slider -->
+  <div class="container">
+    <div class="carousel">
+      <div *ngFor="let reference of references; let i = index" class="carousel_item" [class.active]="currentIndex === i"
+        [style.transform]="getItemTransform(i)">
+        <app-info-box>
+          <div class="content">
+            <p>{{ reference.content }}</p>
+            <div class="content_bottom">
+              <div class="underline"></div>
+              <p>{{ reference.author }}</p>
+            </div>
+          </div>
+        </app-info-box>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pfeile und Punkte -->
+  <div class="arrows_container">
+    <img src="/assets/img/references/arrow_left.png" class="arrow_left" (click)="navigate('left')" alt="Previous" />
+    <img *ngFor="let _ of references; let i = index"
+      [src]="currentIndex === i ? '/assets/img/references/dot_active.png' : '/assets/img/references/dot.png'"
+      class="dot" alt="Dot" />
+    <img src="/assets/img/references/arrow_right.png" class="arrow_right" (click)="navigate('right')" alt="Next" />
+  </div>
+
+  <div class="quotes">
+    <img src="/assets/img/references/quotes.png" alt="">
+  </div>
+</div>

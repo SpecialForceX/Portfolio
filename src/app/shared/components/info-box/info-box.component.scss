@@ -1,0 +1,53 @@
+.info-box {
+    border: 1px solid #3DCFB6;
+    padding: 32px;
+    border-radius: 30px;
+    background-color: rgba(61, 207, 182, 0.1); /* 0.1 entspricht 10% Deckkraft */
+    max-width: 504px;
+}
+
+.info-box-title {
+    font-family: 'Fira Code';
+    font-size: 64px;
+    font-weight: 700;
+    color: #3DCFB6;
+    margin: 0;
+    padding-bottom: 40px;
+
+    @media (max-width: 530px) {
+        font-size: 54px;
+    }
+
+    @media (max-width: 460px) {
+        font-size: 48px;
+    }
+
+    @media (max-width: 420px) {
+        font-size: 40px;
+    }
+
+    @media (max-width: 360px) {
+        font-size: 34px;
+    }
+
+}
+
+.info-box-content {
+    margin: 0;
+    font-size: 18px;
+    color: #FFFFFF;
+    font-family: 'Karla';
+    font-weight: 400;
+    padding-bottom: 16px;
+}
+
+.first_title {
+    margin-bottom: 20px;
+    span {
+        font-family: 'Karla';
+        font-weight: 500;
+        font-size: 24px;
+        color: #3DCFB6;
+    }
+}
+

@@ -1,0 +1,13 @@
+<div class="first_title">
+    <span>{{ firstTitle }}</span>
+</div>
+<div class="info-box">
+    <h3 class="info-box-title" *ngIf="title">{{ title }}</h3>
+    <p *ngIf="content" class="info-box-content">{{ content }}</p>
+    
+    <!-- Platzhalter für dynamische Inhalte -->
+    <ng-content></ng-content>
+</div>
+
+  
+  

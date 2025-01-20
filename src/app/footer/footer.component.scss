@@ -1,0 +1,105 @@
+.footer_main_content {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1297px;
+    padding-top: 135px;
+    padding-bottom: 64px;
+
+    @media (max-width: 1350px) {
+        width: 90%;
+    }
+
+    @media (max-width: 600px) {
+        padding-bottom: 21px;
+    }
+}
+
+.background {
+    background-color: #1c1c1c;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.content_left {
+    p {
+        font-family: 'Karla';
+        font-weight: 400;
+        font-size: 16px;
+        color: #FFFFFF;
+        margin: 0;
+        padding-top: 8px;
+    }
+
+    img {
+        padding-bottom: 14px;
+        width: 72px;
+    }
+}
+
+.content_middle {
+    font-family: 'Fira Code';
+    font-size: 18px;
+    font-weight: 400;
+    color: #3DCFB6;
+}
+
+.content_right div {
+    display: flex;
+    flex-direction: column; /* Anordnung der Links in einer Spalte */
+    gap: 8px; /* Setzt einen Abstand von 8px zwischen den Elementen */
+}
+
+.content_right div a {
+    font-family: 'Karla';
+    font-weight: 400;
+    font-size: 16px;
+    color: #FFFFFF; /* Standardfarbe */
+    margin: 0;
+    margin-top: 8px;
+    text-decoration: none;
+    position: relative; /* Für das Pseudo-Element notwendig */
+    transition: color 0.3s ease; /* Sanfter Übergang der Textfarbe */
+}
+
+.content_right div a:hover {
+    color: #3DCFB6; /* Ändert die Textfarbe beim Hover */
+}
+
+.content_right div a::before {
+    content: "";
+    position: absolute;
+    left: -16px; /* Abstand vor dem Link */
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    transform: translateY(-50%);
+    background-image: url('/assets/img/footer/footer_dot.png');
+    background-size: cover;
+    opacity: 0; /* Unsichtbar, wenn nicht gehovt */
+    transition: opacity 0.3s ease; /* Sanfter Übergang für das Pseudo-Element */
+}
+
+.content_right div a:hover::before {
+    opacity: 1; /* Sichtbar beim Hover */
+}
+
+.desktop {
+    @media (max-width: 600px) {
+        display: none;
+    }
+}
+
+.mobile {
+    display: none;
+    @media (max-width: 600px) {
+        display: block;
+    }
+}

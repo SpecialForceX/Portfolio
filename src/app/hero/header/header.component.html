@@ -1,0 +1,50 @@
+<header>
+  <div class="header_main">
+    <div class="hero_menu">
+      <img
+        [src]="hoveredLangIcon"
+        [alt]="currentLanguage === 'EN' ? 'Switch to German' : 'Switch to English'"
+        (click)="toggleLanguage()"
+        (mouseenter)="onLangHover(true)"
+        (mouseleave)="onLangHover(false)"
+      />
+      <div class="hero_menu_links">
+        <a href="/home#about-me">{{ currentLanguage === 'EN' ? 'About me' : 'Über mich' }}</a>
+        <a href="/home#skills">{{ currentLanguage === 'EN' ? 'Skills' : 'Fähigkeiten' }}</a>
+        <a href="/home#projects">{{ currentLanguage === 'EN' ? 'Projects' : 'Projekte' }}</a>
+      </div>
+    </div>
+
+    <div class="hero_logo">
+      <img class="logo-desktop" src="/assets/img/hero/logo.png" alt="Logo">
+      <img class="logo-mobile" src="/assets/img/hero/logo_mobile.png" alt="Mobile Logo">
+    </div>
+
+    <div class="menu_mobile" (click)="toggleMobileMenu()">
+      <img src="/assets/img/hero/menu_mobile.png" alt="Menu Icon">
+    </div>
+  </div>
+
+  <!-- Hintergrund-Overlay -->
+  <div class="overlay" *ngIf="isMobileMenuOpen" (click)="closeMobileMenu()"></div>
+
+  <!-- Mobiles Menü -->
+  <div class="mobile_menu" [class.open]="isMobileMenuOpen">
+    <div class="mobile_menu_content">
+      <div class="mobile_menu_links">
+        <a href="#about-me" (click)="closeMobileMenu()">{{ currentLanguage === 'EN' ? 'About me' : 'Über mich' }}</a>
+        <a href="#skills" (click)="closeMobileMenu()">{{ currentLanguage === 'EN' ? 'Skills' : 'Fähigkeiten' }}</a>
+        <a href="#projects" (click)="closeMobileMenu()">{{ currentLanguage === 'EN' ? 'Projects' : 'Projekte' }}</a>
+      </div>
+      <div class="mobile_lang_switch">
+        <img
+          [src]="hoveredLangIcon"
+          [alt]="currentLanguage === 'EN' ? 'Switch to German' : 'Switch to English'"
+          (click)="toggleLanguage()"
+          (mouseenter)="onLangHover(true)"
+          (mouseleave)="onLangHover(false)"
+        />
+      </div>
+    </div>
+  </div>
+</header>

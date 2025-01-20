@@ -1,0 +1,231 @@
+.header_main {
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Zentriert Inhalte vertikal */
+    max-width: 100%;
+    /* Verhindert Überlauf */
+    width: 100%;
+
+}
+
+
+header {
+    height: 98px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    width: 100%;
+    /* Sicherstellen, dass es nicht überläuft */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+    color: white;
+}
+
+.hero_logo {
+    padding-right: 96px;
+
+    img {
+        height: 48px;
+        width: auto;
+    }
+}
+
+.hero_logo {
+    position: relative;
+
+    .logo-desktop {
+        display: block;
+        /* Standardmäßig für Desktop anzeigen */
+    }
+
+    .logo-mobile {
+        display: none;
+        /* Standardmäßig für Mobile verstecken */
+    }
+
+    @media (max-width: 800px) {
+        .logo-desktop {
+            display: none;
+            /* Verstecke das Desktop-Logo */
+        }
+
+        .logo-mobile {
+            display: block;
+            /* Zeige das Mobile-Logo */
+            padding-left: 16px;
+        }
+    }
+}
+
+.menu_mobile {
+    display: none;
+
+    @media (max-width: 800px) {
+        display: block;
+        padding-right: 16px;
+    }
+}
+
+.hero_menu {
+    height: 28px;
+    padding-left: 96px;
+    display: flex;
+
+    @media (max-width: 800px) {
+        display: none;
+    }
+}
+
+.hero_menu img:hover {
+    cursor: pointer;
+}
+
+.hero_menu_links {
+    display: flex;
+    padding-left: 24px;
+    gap: 24px;
+    font-size: 20px;
+
+
+
+}
+
+.hero_menu_links a {
+    position: relative;
+    /* Erforderlich, um das ::after-Element relativ zu platzieren */
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.hero_menu_links a:hover {
+    color: #3DCFB6;
+    /* Optional: Textfarbe bei Hover ändern */
+}
+
+.hero_menu_links a::after {
+    content: "";
+    /* Platzhalter für das Bild */
+    position: absolute;
+    bottom: -10px;
+    /* Abstand unterhalb des Links */
+    left: 50%;
+    /* Zentriere das Bild */
+    transform: translateX(-50%);
+    /* Zentrierung ausgleichen */
+    width: 8px;
+    /* Breite des Bildes */
+    height: 8px;
+    /* Höhe des Bildes */
+    background-image: url('/assets/img/hero/menu_hover.png');
+    /* Bildpfad */
+    background-size: contain;
+    /* Bildgröße proportional */
+    background-repeat: no-repeat;
+    /* Kein Bild-Wiederholen */
+    opacity: 0;
+    /* Unsichtbar machen, bis Hover aktiviert wird */
+    transition: opacity 0.3s ease;
+    /* Sanfter Übergang für das Erscheinen */
+}
+
+.hero_menu_links a:hover::after {
+    opacity: 1;
+    /* Zeige das Bild bei Hover */
+}
+
+/* Hintergrund-Overlay */
+.overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Schwarzer transparenter Hintergrund */
+    z-index: 999; /* Über dem normalen Content, aber unter dem Menü */
+  }
+  
+  /* Menü-Styling */
+  .mobile_menu {
+    display: none;
+    position: fixed;
+    top: 75px;
+    right: 0;
+    width: 238px;
+    border-radius: 30px;
+    border: 1px solid #3DCFB6;
+    background-image: url('/assets/img/hero/background_header.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  
+    &.open {
+      transform: translateX(-10%); /* Menü herein schieben */
+    }
+  
+    .mobile_menu_content {
+      padding: 40px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      .mobile_menu_links {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        font-size: 18px;
+  
+        a {
+          text-decoration: none;
+          color: #ffffff;
+  
+          &:hover {
+            color: #3dcfb6;
+          }
+        }
+      }
+  
+      .mobile_lang_switch {
+        margin-top: 24px;
+  
+        img {
+          cursor: pointer;
+          width: auto;
+        }
+      }
+    }
+  }
+  
+  /* Scrollen verhindern */
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  @media (max-width: 850px) {
+    .hero_menu {
+        padding-left: 32px;
+    }
+
+    .hero_logo {
+        padding-right: 32px;
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .mobile_menu {
+      display: block;
+    }
+  
+    .hero_menu {
+      display: none;
+    }
+  }
+  

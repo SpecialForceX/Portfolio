@@ -1,0 +1,235 @@
+.references_main_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #1c1c1c;
+  overflow: hidden;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+    background: linear-gradient(
+      to right,
+      rgba(28, 28, 28, 1) 0%,
+      rgba(28, 28, 28, 0) 100%
+    );
+
+    @media (max-width: 950px) {
+      background: rgba(28, 28, 28, 0)
+    }
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+    transform: scaleX(-1);
+  }
+
+  
+}
+
+.first_title {
+  font-family: 'Fira Code';
+  font-weight: 700;
+  font-size: 32px;
+  color: #3dcfb6;
+
+  @media (max-width: 620px) {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 370px;
+  overflow: hidden;
+  position: relative;
+
+  @media (max-width: 700px) {
+    // width: 80%;
+    // overflow: unset;
+  }
+}
+
+.carousel_item {
+  width: 600px;
+  box-sizing: border-box;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  position: absolute; /* Positionieren die Items unabhängig voneinander */
+  top: 45%; /* Zentrieren vertikal */
+  left: 50%; /* Positionen starten von der Mitte */
+  transform: translate(-50%, -50%) scale(0.8); /* Standardmäßig skalieren */
+  opacity: 0.5;
+
+  @media (max-width: 700px) {
+    width: 500px;
+    left: 54%;
+  }
+
+  @media (max-width: 600px) {
+    width: 400px;
+    left: 63%;
+  }
+
+  @media (max-width: 510px) {
+    width: 300px;
+    left: 76%;
+  }
+
+  @media (max-width: 470px) {
+    width: 300px;
+    left: 78%;
+  }
+
+  @media (max-width: 410px) {
+    width: 300px;
+    left: 83%;
+  }
+
+  @media (max-width: 370px) {
+    width: 253px;
+    left: 94%;
+  }
+
+  @media (max-width: 340px) {
+    width: 253px;
+    left: 100%;
+  }
+
+}
+
+.carousel_item.active {
+  transform: translate(-50%, -50%) scale(1.1); /* Fokus-Item vergrößern */
+  opacity: 1;
+}
+
+.arrow_left,
+.arrow_right {
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  z-index: 10;
+}
+
+.arrows_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 144px;
+  gap: 8px;
+}
+
+.dot {
+  margin: 0 8px;
+  width: 10px;
+  height: 10px;
+}
+
+.dot.active {
+  background-color: #3dcfb6;
+}
+
+.content {
+  height: 235px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  p {
+    font-family: 'Karla';
+    font-weight: 400;
+    font-size: 20px;
+    color: #ffffff;
+
+    @media (max-width: 370px) {
+      font-size: 16px;
+    }
+  }
+
+  
+}
+
+.content_bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    width: 90%;
+  }
+}
+
+.underline {
+  width: 100%;
+  height: 1px;
+  background: #ffffff;
+  margin-right: 24px;
+}
+
+.quotes {
+  position: absolute; /* Bezieht sich auf das nächstgelegene positionierte Elternelement */
+  top: 50%; /* Zentriere vertikal relativ zum Container */
+  left: 50%; /* Zentriere horizontal relativ zum Container */
+  transform: translate(-385%, -370%); /* Verschiebe für Offset */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 730px) {
+    transform: translate(-340%, -370%);
+  }
+
+  @media (max-width: 700px) {
+    transform: translate(-309%, -370%);
+  }
+
+  @media (max-width: 600px) {
+    transform: translate(-301%, -407%);
+  }
+
+  @media (max-width: 510px) {
+    transform: translate(-342%, -593%);
+  }
+
+  @media (max-width: 370px) {
+    transform: translate(-274%, -593%);
+  }
+
+  @media (max-width: 360px) {
+    transform: translate(-274%, -523%);
+  }
+
+  img {
+    @media (max-width: 600px) {
+      width: 75px;
+    }
+
+    @media (max-width: 510px) {
+      width: 50px;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+

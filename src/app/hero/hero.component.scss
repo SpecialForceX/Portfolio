@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Fira Code';
+    src: url('/assets/fonts/FiraCode-VariableFont_wght.ttf'),
+}
+
+@font-face {
+    font-family: 'Karla';
+    src: url('/assets/fonts/Karla-VariableFont_wght.ttf'),
+}
+  
+* {
+    font-family: 'Fira Code';
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100vh; /* Höhe auf die Viewport-Höhe setzen */
+    background-image: url("/assets/img/hero/background_header.png");
+    background-size: cover; /* Bild proportional vergrößern, um den gesamten Bereich abzudecken */
+    background-position: center; /* Bild in der Mitte positionieren */
+    background-repeat: no-repeat; /* Verhindert Wiederholung des Bildes */
+    // overflow-x: hidden; /* Entfernt den horizontalen Scrollbalken */
+}

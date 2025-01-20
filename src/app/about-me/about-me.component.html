@@ -1,0 +1,14 @@
+<div id="about-me" class="about_main_content">
+  <div class="about_img_box">
+    <img src="/assets/img/about-me/foto_patrick.jpeg" alt="Person Photo">
+  </div>
+  <div class="info_box">
+    <app-info-box class="about_info_box" [title]="title" [firstTitle]="firstTitle" [content]="textContent">
+      <!-- Dynamischer Inhalt: Bulletpoints -->
+      <div *ngFor="let point of bulletPoints" class="about_bulletpoints">
+        <img [src]="point.imgSrc" alt="Bulletpoint Icon">
+        <p>{{ point.text }}</p>
+      </div>
+    </app-info-box>
+  </div>
+</div>

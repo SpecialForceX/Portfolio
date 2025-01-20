@@ -1,0 +1,52 @@
+<div class="background">
+    <div class="project-box-container">
+        <div class="content_left">
+            <p class="number">{{ project.number }}</p>
+            <p class="project">{{ project.name }}</p>
+            <p class="project-description-title">{{ projectDescriptionTitle }}</p>
+            <p class="project-description">{{ project.description }}</p>
+            <div class="project-skills">
+                <div class="skill-pair" *ngFor="let skill of project.skills; let i = index">
+                    <img [src]="project.skillIcons[i]" alt="{{ skill }} icon">
+                    <p>{{ skill }}</p>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <div class="button_container">
+                    <a [href]="project.githubLink" target="_blank">
+                        <button type="button" class="animated-btn">
+                            <span>GitHub</span>
+                        </button>
+                    </a>
+                </div>
+                <div class="button_container">
+                    <a [href]="project.liveTestLink" target="_blank">
+                        <button type="button" class="animated-btn">
+                            <span>Live Test</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div class="container mobile">
+                <div class="next-project-container" (click)="showNextProject()">
+                    <p>{{ nextProjectText }}</p>
+                    <img src="/assets/img/project-box/arrow_right.png" alt="Next Project">
+                </div>
+            </div>
+        </div>
+        <div class="content_right">
+            <div class="cross-container">
+                <img class="close-icon" src="/assets/img/project-box/close.png" alt="Close" (click)="closeBox.emit()">
+            </div>
+
+            <img class="project-img" [src]="project.projectBoxImage" [alt]="project.name + ' Image'">
+            <div class="container Desktop">
+                <div class="next-project-container" (click)="showNextProject()">
+                    <p>{{ nextProjectText }}</p>
+                    <img src="/assets/img/project-box/arrow_right.png" alt="Next Project">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

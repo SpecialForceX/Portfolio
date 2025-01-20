@@ -1,0 +1,201 @@
+.portfolio_main_content {
+    padding-top: 144px;
+    padding-bottom: 144px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio_main_content_left {
+    @media (max-width: 1350px) {
+        width: 80%;
+    }
+
+    @media (max-width: 680px) {
+        width: 95%;
+    }
+}
+
+.background {
+    background-color: #1C1C1C;
+
+}
+
+.first_title {
+    margin-bottom: 20px;
+    margin-bottom: 20px;
+
+    span {
+        font-family: 'Karla';
+        font-weight: 500;
+        font-size: 24px;
+        color: #3DCFB6;
+    }
+
+    display: flex;
+    justify-content: baseline;
+    width: 1297px;
+
+    @media (max-width: 1350px) {
+        width: 80%;
+    }
+
+    
+}
+
+.second_title {
+    width: 1297px;
+
+    p {
+        font-family: 'Fira Code';
+        font-weight: 700;
+        font-size: 64px;
+        color: #3DCFB6;
+        margin: 0;
+
+        @media (max-width: 470px) {
+        font-size: 54px;
+        }
+
+        @media (max-width: 400px) {
+            font-size: 48px;
+        }
+
+        @media (max-width: 350px) {
+            font-size: 44px;
+        }
+    }
+
+    @media (max-width: 1350px) {
+        width: 80%;
+    }
+
+    
+
+}
+
+.underline {
+    width: 1297px;
+
+    p {
+        font-family: 'Karla';
+        font-weight: 400;
+        font-size: 18px;
+        color: #FFFFFF;
+    }
+
+    @media (max-width: 1350px) {
+        width: 80%;
+    }
+}
+
+.portfolio_menu {
+    width: 1297px;
+    margin-top: 41px;
+
+    @media (max-width: 1350px) {
+        width: 80%;
+    }
+}
+
+.fine_line {
+    border: solid #3DCFB6 1px;
+    width: 880px;
+
+    @media (max-width: 1060px) {
+        width: 120%;
+    }
+}
+
+.portfolio_skills {
+    display: flex;
+    align-items: center; /* Zentriert den Text und die Trennzeichen vertikal */
+    padding-right: 32px;
+
+    @media (max-width: 340px) {
+        padding-right: 0;
+    }
+}
+
+.portfolio_skills span {
+    font-family: 'Karla';
+    font-weight: 400;
+    font-size: 18px;
+    color: #FFFFFF;
+    display: flex; /* Damit der Text und der Seperator als Inline-Flex erscheinen */
+    align-items: center; /* Zentriert innerhalb des Flex-Containers */
+}
+
+.seperator {
+    height: 22px;
+    width: 2px;
+    background-color: #3DCFB6;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+
+.portfolio_projects {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 880px;
+    position: relative;
+
+    p {
+        font-family: 'Fira Code';
+        font-weight: 700;
+        font-size: 24px;
+        color: #FFFFFF;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        padding-left: 32px;
+
+        @media (max-width: 530px) {
+            padding-left: 0;
+            margin-bottom: 10px;
+        }
+    }
+
+    &:hover .project_image {
+        opacity: 1;
+        /* Bild wird sichtbar */
+        transform: translateY(-50%) translateX(20px);
+        /* Optional: leichte Verschiebung */
+    }
+
+    &:hover {
+        background: rgba(61, 207, 182, 0.3);
+        cursor: pointer;
+    }
+
+    @media (max-width: 1060px) {
+        width: 120%;
+    }
+
+    @media (max-width: 530px) {
+        flex-direction: column;
+        justify-content: baseline;
+        align-items: baseline;
+        padding-bottom: 40px;
+    }
+
+}
+
+.project_image {
+    position: absolute;
+    top: 90%;
+    right: -400px;
+    /* Standardposition */
+    transform: translateY(-50%);
+    opacity: 0;
+    /* Unsichtbar */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    /* Sanfter Übergang */
+
+    @media (max-width: 1350px) {
+        display: none;
+        width: 0;
+    }
+}
+

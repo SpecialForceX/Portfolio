@@ -1,0 +1,151 @@
+.hero_stripe_left {
+    height: 312px;
+    position: absolute;
+    bottom: 0;
+    left: 96px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @media (max-width: 800px) {
+        left: 16px;
+    }
+
+    @media (max-height: 668px) {
+        height: 225px;
+    }
+
+}
+
+.hero_stripe_left_arrow_box {
+    height: 48px;
+    width: 30px;
+    border: solid 1px #3DCFB6;
+    border-radius: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        animation: bounce 1.5s ease-in-out infinite;
+        /* Animation hinzufügen */
+    }
+
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        /* Ausgangsposition */
+    }
+
+    50% {
+        transform: translateY(10px);
+        /* Bewegt den Pfeil 10px nach unten */
+    }
+}
+
+.hero_stripe_left_line {
+    margin-top: 24px;
+    flex: 1;
+    width: 1px;
+    background-color: #3DCFB6;
+}
+
+.hero_stripe_right {
+    position: absolute;
+    bottom: 0;
+    right: 96px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+
+    @media (max-width: 800px) {
+        right: 16px;
+    }
+
+}
+
+.hero_stripe_right_line {
+    width: 1px;
+    height: 186px;
+    background-color: #FFFFFF;
+
+    @media (max-height: 668px) {
+        height: 125px;
+    }
+}
+
+.hero_stripe_right_icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 24px;
+    margin-top: 24px;
+    height: 76px;
+    width: 44px;
+    padding-left: 12px;
+    cursor: pointer;
+}
+
+.hero_stripe_right_mail {
+    writing-mode: vertical-rl;
+    /* Text vertikal schreiben von unten nach oben */
+    transform: rotate(180deg);
+    /* Dreht den Text von unten nach oben */
+
+    text-align: center;
+
+    /* Zentriert den Text im Container */
+    a {
+        text-decoration: none;
+        font-size: 18px;
+        /* Beispiel-Schriftgröße */
+        color: #FFFFFF;
+        /* Beispiel-Farbe */
+        font-family: 'Karla';
+    }
+
+    :hover {
+        color: #3DCFB6;
+    }
+
+    @media (max-width: 940px) {
+        display: none;
+    }
+
+}
+
+.github_logo {
+    width: 32px; /* Breite des Logos */
+    height: 32px; /* Höhe des Logos */
+    background-image: url('/assets/img/hero/github.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.github_logo:hover {
+    width: 44px;
+    background-image: url('/assets/img/hero/github_hover.png'); /* Hover-Bild */
+}
+
+.linkedin_logo {
+    width: 32px;
+    height: 32px;
+    background-image: url('/assets/img/hero/linkedin.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.linkedin_logo:hover {
+    width: 44px;
+    background-image: url('/assets/img/hero/linkedin_hover.png');
+}
+
+

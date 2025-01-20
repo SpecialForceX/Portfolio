@@ -1,0 +1,32 @@
+<div class="background">
+  <div class="footer_main_content">
+    <div class="content_left">
+      <img src="/assets/img/footer/footer_logo.png" alt="Footer Logo">
+      <p>{{ footerContent.role }}</p>
+      <p>{{ footerContent.location }}</p>
+    </div>
+    <div class="content_middle desktop">
+      <p>{{ footerContent.copyright }}</p>
+    </div>
+    <div class="content_right">
+      <div>
+        <a target="_blank" href="https://github.com/SpecialForceX">{{ footerContent.github }}</a>
+      </div>
+      <div>
+        <a target="_blank" href="https://www.linkedin.com/in/patrick-batke-78825a348/">{{ footerContent.linkedin }}</a>
+      </div>
+      <div>
+        <a href="mailto:patrick.batke@web.de">{{ footerContent.email }}</a>
+      </div>
+      <div>
+        <!-- Dynamischer Link zur Datenschutzerklärung -->
+        <a [routerLink]="imprintLink">{{ footerContent.legalNotice }}</a>
+      </div>
+    </div>
+  </div>
+  <div class="content_middle mobile">
+    <p>{{ footerContent.copyright }}</p>
+  </div>
+</div>
+
+  

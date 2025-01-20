@@ -1,0 +1,56 @@
+<div id="projects" class="background">
+    <div class="portfolio_main_content">
+      <div class="portfolio_main_content_left">
+        <div class="first_title">
+          <span>{{ getTranslatedText({ EN: 'Portfolio', DE: 'Portfolio' }) }}</span>
+        </div>
+        <div class="second_title">
+          <p>{{ getTranslatedText({ EN: 'Featured Projects', DE: 'Ausgewählte Projekte' }) }}</p>
+        </div>
+        <div class="underline">
+          <p>
+            {{
+              getTranslatedText({
+                EN: 'Explore a selection of my work here - Interact with projects to see my skills in action.',
+                DE: 'Entdecken Sie hier eine Auswahl meiner Arbeiten - Interagieren Sie mit Projekten, um meine Fähigkeiten in Aktion zu sehen.',
+              })
+            }}
+          </p>
+        </div>
+        <div class="portfolio_menu">
+          <!-- Projekte Liste -->
+          <div *ngFor="let project of projects; let i = index">
+            <!-- Fine Line über jedem Projekt -->
+            <div class="fine_line"></div>
+  
+            <!-- Projekt -->
+            <div class="portfolio_projects" (click)="openProjectBox(i)">
+              <p>{{ getTranslatedText(project.name) }}</p>
+              <div class="portfolio_skills">
+                <span *ngFor="let skill of project.skills">
+                  {{ skill }}
+                  <div class="seperator" *ngIf="!isLastSkill(skill, project.skills)"></div>
+                </span>
+              </div>
+              <div class="project_image">
+                <img [src]="project.portfolioImage" [alt]="getTranslatedText(project.name) + ' Project Image'">
+              </div>
+            </div>
+          </div>
+  
+          <!-- Fine Line unter dem letzten Projekt -->
+          <div class="fine_line"></div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Dynamische Project Box -->
+    <app-project-box
+      *ngIf="currentProjectIndex !== null"
+      [projects]="projects"
+      [projectIndex]="currentProjectIndex!"
+      (closeBox)="closeProjectBox()"
+    >
+    </app-project-box>
+  </div>
+  
